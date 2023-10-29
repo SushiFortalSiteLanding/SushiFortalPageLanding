@@ -1,16 +1,17 @@
 <script setup>
-import MenuList from '../components/MenuList.vue';
-import MostRequested from '../components/MostRequested.vue'
+import MainLayout from '../layout/MainLayout.vue';
 import HomeSection from '../components/HomeSection.vue'
+import MostRequested from '../components/MostRequested.vue'
+import MenuList from '../components/MenuList.vue';
 </script>
 
 <template>
+  <MainLayout>
+    <HomeSection />
 
-  <HomeSection />
+    <MostRequested />
 
-  <MostRequested />
-
-  <MenuList />
-
+    <MenuList />
+  </MainLayout>
 </template>
 
