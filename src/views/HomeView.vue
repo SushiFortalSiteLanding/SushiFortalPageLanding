@@ -1,6 +1,16 @@
 <script setup>
+import MenuList from '../components/MenuList.vue';
+import MostRequested from '../components/MostRequested.vue'
+import HomeSection from '../components/HomeSection.vue'
 </script>
 
 <template>
-  <h1 class="underline">Oi</h1>
+
+  <HomeSection />
+
+  <MostRequested />
+
+  <MenuList />
+
 </template>
+
