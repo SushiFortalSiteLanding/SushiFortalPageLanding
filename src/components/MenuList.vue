@@ -7,11 +7,11 @@ const menuStore = useMenuStore()
 </script>
 
 <template>
-    <section class="bg-white text-red-600 pb-20">
+    <section class="pb-20 text-red-600 bg-white">
 
-        <a class="py-4" id="Cardapio"></a>
+        <a class="py-8" id="Cardapio"></a>
         <div class="py-8 lg:py-14">
-            <p class="text-center text-2xl lg:text-4xl font-bold text-black">Nosso Cardápio</p>
+            <p class="text-2xl font-bold text-center text-black lg:text-4xl">Nosso Cardápio</p>
         </div>
 
         <GridProduct title="Entradas" :array="menuStore.menuEntradas"/>

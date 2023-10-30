@@ -53,29 +53,29 @@ const continueBuy = () => {
 </script>
 
 <template>
-    <nav class="bg-black text-white fixed w-full z-20 top-0 left-0 border-b border-gray-600">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav class="fixed top-0 left-0 z-20 w-full text-white bg-black border-b border-gray-600">
+        <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
             <a href="https://flowbite.com/" class="flex items-center">
                 <img src="../assets/images/logo.avif" class="h-8 mr-3" alt="Flowbite Logo">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Sushi Fortal</span>
             </a>
             <div class="flex gap-1 md:order-2">
                 <button type="button" @click="modalFormProduct = true"
-                    class="relative focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm text-white px-2 py-2 text-center mr-1 md:mr-0">
+                    class="relative px-2 py-2 mr-1 text-sm font-medium text-center text-white rounded-lg focus:ring-2 focus:outline-none focus:ring-white md:mr-0">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                     </svg>
 
-                    <div class="absolute bottom-1 right-0">
+                    <div class="absolute right-0 bottom-1">
                         <p class="">
                             {{ cartStore.cartItems.length }}
                         </p>
                     </div>
                 </button>
                 <button @click="showMenu" data-collapse-toggle="navbar-sticky" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                    class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
                     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
@@ -88,7 +88,11 @@ const continueBuy = () => {
             <div :class="{ 'md:block': menu, 'hidden md:block': !menu }"
                 class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black text-white">
+                    class="flex flex-col p-4 mt-4 font-medium text-white bg-black border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
+                    <li>
+                        <a href="#Destaques"
+                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Destaques</a>
+                    </li>
                     <li>
                         <a href="#Cardapio"
                             class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Cardápio</a>
@@ -112,7 +116,7 @@ const continueBuy = () => {
         <div class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
             v-show="modalFormProduct">
             <div class="relative w-4/5 lg:mx-auto lg:w-2/5">
-                <div class="w-full pt-8 pb-10 lg:pr-8 bg-white rounded-md lg:pl-9">
+                <div class="w-full pt-8 pb-10 bg-white rounded-md lg:pr-8 lg:pl-9">
                     <div class="flex justify-between">
                         <p class="text-2xl font-bold tracking-tight"></p>
 
@@ -120,13 +124,13 @@ const continueBuy = () => {
                     </div>
 
                     <div class="mt-6">
-                        <p class="text-2xl text-red-700 text-center font-bold tracking-tight">Meu Carrinho</p>
+                        <p class="text-2xl font-bold tracking-tight text-center text-red-700">Meu Carrinho</p>
                     </div>
 
                     <div v-if="cartStore.cartItems.length > 0">
                         <div class="mt-4 lg:mx-2">
                             <div v-for="(product, index) in cartStore.cartItems" :key="product.id"
-                                class="flex justify-between rounded-lg py-3 px-4 mb-3">
+                                class="flex justify-between px-4 py-3 mb-3 rounded-lg">
                                 <p>{{ product.name }}</p>
 
                                 <div class="flex gap-2">
@@ -142,22 +146,22 @@ const continueBuy = () => {
                             </div>
                         </div>
 
-                        <div class="flex justify-end mt-2 mx-5">
+                        <div class="flex justify-end mx-5 mt-2">
                             <p>Total: R${{ cartStore.cartTotal + '0' }}</p>
                         </div>
                     </div>
 
                     <div v-else class="my-10">
-                        <p class="text-center text-lg">Seu carrinho esta vazio</p>
+                        <p class="text-lg text-center">Seu carrinho esta vazio</p>
                     </div>
 
                     <div class="flex flex-row-reverse mt-10 mr-4">
                         <button type="submit" @click="openFormBuy" v-if="cartStore.cartItems.length > 0"
-                            class="ml-5 px-7 py-2 text-base tracking-tighter text-white bg-red-700 rounded-full">
+                            class="py-2 ml-5 text-base tracking-tighter text-white bg-red-700 rounded-full px-7">
                             Continuar
                         </button>
                         <button @click="modalFormProduct = false"
-                            class="px-7 py-2 text-base tracking-tighter text-red-700 bg-white border border-red-700 rounded-full">
+                            class="py-2 text-base tracking-tighter text-red-700 bg-white border border-red-700 rounded-full px-7">
                             Fechar
                         </button>
                     </div>
@@ -172,7 +176,7 @@ const continueBuy = () => {
         <div class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
             v-show="modalFormBuy && cartStore.cartItems.length > 0 && !modalFormProduct">
             <div class="relative w-4/5 lg:mx-auto lg:w-2/5">
-                <div class="w-full pt-8 pb-10 lg:pr-8 bg-white rounded-md lg:pl-9">
+                <div class="w-full pt-8 pb-10 bg-white rounded-md lg:pr-8 lg:pl-9">
                     <div class="flex justify-between">
                         <p class="text-2xl font-bold tracking-tight"></p>
 
@@ -180,12 +184,12 @@ const continueBuy = () => {
                     </div>
 
                     <div class="mt-6">
-                        <p class="text-2xl text-red-700 text-center font-bold tracking-tight">Preencha o
+                        <p class="text-2xl font-bold tracking-tight text-center text-red-700">Preencha o
                             formulário para
                             fechar a compra</p>
                     </div>
 
-                    <div class="mt-4 mx-4">
+                    <div class="mx-4 mt-4">
                         <div class="mb-6">
                             <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Seu
                                 Endereço</label>
@@ -208,11 +212,11 @@ const continueBuy = () => {
 
                     <div class="flex flex-row-reverse mt-10 mr-4">
                         <button type="submit" @click="continueBuy"
-                            class="ml-5 px-7 py-2 text-base tracking-tighter text-white bg-red-700 rounded-full">
+                            class="py-2 ml-5 text-base tracking-tighter text-white bg-red-700 rounded-full px-7">
                             Continuar
                         </button>
                         <button @click="backToCart"
-                            class="px-7 py-2 text-base tracking-tighter text-red-700 bg-white border border-red-700 rounded-full">
+                            class="py-2 text-base tracking-tighter text-red-700 bg-white border border-red-700 rounded-full px-7">
                             Voltar
                         </button>
                     </div>
