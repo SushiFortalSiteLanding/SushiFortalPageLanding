@@ -3,13 +3,52 @@ import { ref } from 'vue'
 import { useCartStore } from '../stores/cart.js';
 
 const modalFormProduct = ref(false)
+const modalFormBuy = ref(false)
 
 const cartStore = useCartStore()
+
+const address = ref('')
+const payment = ref('')
 
 let menu = ref(false)
 
 const showMenu = () => {
     menu.value = !menu.value
+}
+
+const openFormBuy = () => {
+    modalFormProduct.value = false
+    modalFormBuy.value = true
+}
+
+const backToCart = () => {
+    modalFormBuy.value = false
+    modalFormProduct.value = true
+}
+
+const continueBuy = () => {
+    const numeroTelefone = "5585985597635";
+    const cartItems = cartStore.cartItems;
+    const addressText = "Endereço: " + address.value;
+    const paymentText = "Pagamento: " + payment.value;
+
+    let pedido = "Pedidos:\n";
+
+    cartItems.forEach((item, index) => {
+        pedido += `${index + 1}. ${item.name}\n`;
+    });
+
+    pedido += `\n${addressText}\n${paymentText}`;
+
+    const url = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(pedido)}`;
+
+    window.open(url, "_blank");
+
+    modalFormProduct.value = false;
+    address.value = '';
+    payment.value = '';
+
+    cartStore.clearCart
 }
 </script>
 
@@ -46,12 +85,13 @@ const showMenu = () => {
                     </svg>
                 </button>
             </div>
-            <div :class="{ 'md:block': menu, 'hidden md:block': !menu }" class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <div :class="{ 'md:block': menu, 'hidden md:block': !menu }"
+                class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul
                     class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black text-white">
                     <li>
                         <a href="#Cardapio"
-                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Cardapio</a>
+                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Cardápio</a>
                     </li>
                     <!--
                     <li>
@@ -111,33 +151,8 @@ const showMenu = () => {
                         <p class="text-center text-lg">Seu carrinho esta vazio</p>
                     </div>
 
-                    <!--
-                    <div>
-                        <div class="mb-6">
-                            <label for="size" class="block mb-2 text-sm font-medium text-gray-900">Tamanho</label>
-                            <input type="text" id="size" v-model="size"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                                required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Seu
-                                Endereco</label>
-                            <input type="text" id="address" placeholder="Rua, 999, Bairro, Cidade, Estado" v-model="address"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                                required>
-                        </div>
-                        <div class="mb-6">
-                            <label for="payment" class="block mb-2 text-sm font-medium text-gray-900">Metodo
-                                de Pagamento</label>
-                            <input type="text" id="payment" v-model="payment"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
-                                required>
-                        </div>
-                    </div>
-                    -->
-
                     <div class="flex flex-row-reverse mt-10 mr-4">
-                        <button type="submit" @click="continueBuy"
+                        <button type="submit" @click="openFormBuy" v-if="cartStore.cartItems.length > 0"
                             class="ml-5 px-7 py-2 text-base tracking-tighter text-white bg-red-700 rounded-full">
                             Continuar
                         </button>
@@ -151,6 +166,61 @@ const showMenu = () => {
         </div>
     </Transition>
     <div v-show="modalFormProduct" class="fixed inset-0 z-40 bg-black opacity-75"></div>
+
+    <Transition>
+
+        <div class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
+            v-show="modalFormBuy && cartStore.cartItems.length > 0 && !modalFormProduct">
+            <div class="relative w-4/5 lg:mx-auto lg:w-2/5">
+                <div class="w-full pt-8 pb-10 lg:pr-8 bg-white rounded-md lg:pl-9">
+                    <div class="flex justify-between">
+                        <p class="text-2xl font-bold tracking-tight"></p>
+
+                        <button class="mr-5 lg:mr-5" @click="modalFormBuy = false">X</button>
+                    </div>
+
+                    <div class="mt-6">
+                        <p class="text-2xl text-red-700 text-center font-bold tracking-tight">Preencha o
+                            formulário para
+                            fechar a compra</p>
+                    </div>
+
+                    <div class="mt-4 mx-4">
+                        <div class="mb-6">
+                            <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Seu
+                                Endereço</label>
+                            <input type="text" id="address" placeholder="Rua, 999, Bairro" v-model="address"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+                                required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="payment" class="block mb-2 text-sm font-medium text-gray-900">Metodo
+                                de Pagamento</label>
+                            <select id="payment" v-model="payment" required
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+                                <option selected disabled>Escolha um metodo de Pagamento</option>
+                                <option value="Pix">Pix</option>
+                                <option value="Cartao de Crédito">Cartao de Crédito</option>
+                                <option value="Cartao de Debito">Cartao de Debito</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row-reverse mt-10 mr-4">
+                        <button type="submit" @click="continueBuy"
+                            class="ml-5 px-7 py-2 text-base tracking-tighter text-white bg-red-700 rounded-full">
+                            Continuar
+                        </button>
+                        <button @click="backToCart"
+                            class="px-7 py-2 text-base tracking-tighter text-red-700 bg-white border border-red-700 rounded-full">
+                            Voltar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Transition>
+    <div v-show="modalFormBuy" class="fixed inset-0 z-40 bg-black opacity-75"></div>
 </template>
 
 <style scoped>

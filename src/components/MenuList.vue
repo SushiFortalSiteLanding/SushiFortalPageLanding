@@ -11,7 +11,7 @@ const menuStore = useMenuStore()
 
         <a class="py-4" id="Cardapio"></a>
         <div class="py-8 lg:py-14">
-            <p class="text-center text-2xl lg:text-4xl font-bold text-black">Nosso Cardapio</p>
+            <p class="text-center text-2xl lg:text-4xl font-bold text-black">Nosso Cardápio</p>
         </div>
 
         <GridProduct title="Entradas" :array="menuStore.menuEntradas"/>
