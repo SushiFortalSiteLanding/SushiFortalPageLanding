@@ -1,11 +1,13 @@
 <template>
     <section class="bg-home py-60">
         <div class="flex justify-center">
-            <!--IMAGE LOGO-->
+            <div class="">
+                <img class="w-48 h-48 rounded-full object-cover border border-white" src="../assets/images/logo.avif" alt="">
+            </div>
         </div>
 
-        <div>
-            <p class="text-center text-white text-4xl font-bold font-title">SUSHI</p>
+        <div class="mt-3">
+            <p class="text-center text-white text-4xl font-bold font-title">Sushi Fortal</p>
         </div>
 
         <div class="flex justify-center mt-4">
