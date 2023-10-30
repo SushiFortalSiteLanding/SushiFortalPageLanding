@@ -990,14 +990,43 @@ export const useMenuStore = defineStore('menu', () => {
 
     ]
 
+    const menuDestaques = [
+        {
+            id: 114,
+            name: 'Combo plus  (28 peças) + Coca lata  350ml',
+            description: '4 Hossomaki Salmão , 4 Niguiri  Salmão maçaricado , 4 Niguiri Salmão 4 Uramaki Skin , 4 jhou Salmão , 4 Sashimi Salmão 4 jhou geleia.',
+            price: '110.90',
+            type: 'Destaques',
+            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091647_HR4M_i.jpg',
+        }, 
+        {
+            id: 115,
+            name: 'Temaki Par',
+            description: 'Cone tradicionalmente feito de folhas de algas com recheio de arroz e peixe',
+            price: '68.31',
+            type: 'Destaques',
+            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310102014_C4U8_i.jpg',
+        }, 
+        {
+            id: 116,
+            name: 'Combo Plus Salmão (20 peças)',
+            description: '8 Sashimi de Salmão , 4 jhou Salmão selado , 4 Uramaki Mexicano , 4 jhou Salmão',
+            price: '76.41',
+            type: 'Destaques',
+            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091756_5ADU_i.jpg',
+        },
+    ]
+
     return {
         menuEntradas,
         menuCombos,
         menuCombosPlus,
         menuComboTemaki,
         menuPromo,
-        menuCombinadoFortal, menuHotRoll, menuJhou, menuNiguiri, menuSashimi, 
+        menuCombinadoFortal, menuHotRoll, menuJhou, menuNiguiri, menuSashimi,
         menuUramaki, menuHossomaki, menuYakisoba, menuTemakis, menuDogRoll, menuPoke,
-        menuPratosQuentes, menuYakimeshi, menuComplementos, menuBebidas
+        menuPratosQuentes, menuYakimeshi, menuComplementos, menuBebidas, 
+
+        menuDestaques
     }
 })
