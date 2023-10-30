@@ -27,7 +27,7 @@ const backToCart = () => {
 }
 
 const continueBuy = () => {
-    const numeroTelefone = "5585985597635";
+    const number = "5585986994329";
     const cartItems = cartStore.cartItems;
     const addressText = "Endereço: " + address.value;
     const paymentText = "Pagamento: " + payment.value;
@@ -40,23 +40,23 @@ const continueBuy = () => {
 
     pedido += `\n${addressText}\n${paymentText}`;
 
-    const url = `https://api.whatsapp.com/send?phone=${numeroTelefone}&text=${encodeURIComponent(pedido)}`;
+    const url = `https://api.whatsapp.com/send?phone=${number}&text=${encodeURIComponent(pedido)}`;
 
+    cartStore.clearCart
+    
     window.open(url, "_blank");
 
     modalFormProduct.value = false;
     address.value = '';
     payment.value = '';
-
-    cartStore.clearCart
 }
 </script>
 
 <template>
     <nav class="fixed top-0 left-0 z-20 w-full text-white bg-black border-b border-gray-600">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
-            <a href="https://flowbite.com/" class="flex items-center">
-                <img src="../assets/images/logo.avif" class="h-8 mr-3" alt="Flowbite Logo">
+            <a href="https://sushifortal.com.br/" class="flex items-center">
+                <img src="../assets/images/logo.jpeg" class="h-10 mr-3 rounded-full" alt="Flowbite Logo">
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Sushi Fortal</span>
             </a>
             <div class="flex gap-1 md:order-2">
