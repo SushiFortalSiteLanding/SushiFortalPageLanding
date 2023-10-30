@@ -8,8 +8,8 @@ export const useCartStore = defineStore('cart', () => {
     const cartItems = items.value
 
     const cartTotal = computed(() => {
-        return items.value.reduce((total, item) => total + item.price, 0)
-    })
+        return items.value.reduce((total, item) => total + parseFloat(item.price), 0);
+      });
 
     function addToCart(item) {
         items.value.push(item)

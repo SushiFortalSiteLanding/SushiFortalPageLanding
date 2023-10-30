@@ -5,6 +5,12 @@ import { useCartStore } from '../stores/cart.js';
 const modalFormProduct = ref(false)
 
 const cartStore = useCartStore()
+
+let menu = ref(false)
+
+const showMenu = () => {
+    menu.value = !menu.value
+}
 </script>
 
 <template>
@@ -29,7 +35,7 @@ const cartStore = useCartStore()
                         </p>
                     </div>
                 </button>
-                <button data-collapse-toggle="navbar-sticky" type="button"
+                <button @click="showMenu" data-collapse-toggle="navbar-sticky" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-sticky" aria-expanded="false">
                     <span class="sr-only">Open main menu</span>
@@ -40,17 +46,14 @@ const cartStore = useCartStore()
                     </svg>
                 </button>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <div :class="{ 'md:block': menu, 'hidden md:block': !menu }" class="items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black text-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-black md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black text-white">
                     <li>
-                        <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0"
-                            aria-current="page">Home</a>
+                        <a href="#Cardapio"
+                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Cardapio</a>
                     </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">About</a>
-                    </li>
+                    <!--
                     <li>
                         <a href="#"
                             class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Services</a>
@@ -59,6 +62,7 @@ const cartStore = useCartStore()
                         <a href="#"
                             class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Contact</a>
                     </li>
+                    -->
                 </ul>
             </div>
         </div>
@@ -83,7 +87,7 @@ const cartStore = useCartStore()
                         <div class="mt-4 lg:mx-2">
                             <div v-for="(product, index) in cartStore.cartItems" :key="product.id"
                                 class="flex justify-between rounded-lg py-3 px-4 mb-3">
-                                <p>{{ product.name }} (8 pecas)</p>
+                                <p>{{ product.name }}</p>
 
                                 <div class="flex gap-2">
                                     <p>R${{ product.price }}</p>
@@ -99,7 +103,7 @@ const cartStore = useCartStore()
                         </div>
 
                         <div class="flex justify-end mt-2 mx-5">
-                            <p>Total: R${{ cartStore.cartTotal }}</p>
+                            <p>Total: R${{ cartStore.cartTotal + '0' }}</p>
                         </div>
                     </div>
 
@@ -132,7 +136,7 @@ const cartStore = useCartStore()
                     </div>
                     -->
 
-                    <div class="flex flex-row-reverse mt-10">
+                    <div class="flex flex-row-reverse mt-10 mr-4">
                         <button type="submit" @click="continueBuy"
                             class="ml-5 px-7 py-2 text-base tracking-tighter text-white bg-red-700 rounded-full">
                             Continuar
@@ -146,7 +150,7 @@ const cartStore = useCartStore()
             </div>
         </div>
     </Transition>
-    <div v-show="modalFormProduct" class="fixed inset-0 z-40 bg-black opacity-50"></div>
+    <div v-show="modalFormProduct" class="fixed inset-0 z-40 bg-black opacity-75"></div>
 </template>
 
 <style scoped>
