@@ -116,7 +116,7 @@ const continueBuy = () => {
         <div class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
             v-show="modalFormProduct">
             <div class="relative w-4/5 lg:mx-auto lg:w-2/5">
-                <div class="w-full pt-8 pb-10 bg-white rounded-md lg:pr-8 lg:pl-9">
+                <div class="w-full pt-6 pb-8 bg-white rounded-md lg:px-6">
                     <div class="flex justify-between">
                         <p class="text-2xl font-bold tracking-tight"></p>
 
@@ -135,10 +135,12 @@ const continueBuy = () => {
                     <div v-if="cartStore.cartItems.length > 0">
                         <div class="mt-4 lg:mx-2">
                             <div v-for="(product, index) in cartStore.cartItems" :key="product.id"
-                                class="flex justify-between px-4 py-3 mb-3 rounded-lg">
-                                <p>{{ product.name }}</p>
+                                class="px-4 py-3 mb-3 border-b">
+                                <div>
+                                    <p>{{ product.name }}</p>
+                                </div>
 
-                                <div class="flex gap-2">
+                                <div class="flex justify-end mt-1 gap-2">
                                     <p>R${{ product.price }}</p>
                                     <button class="text-red-700" @click="cartStore.removeFromCart(product)">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -151,7 +153,7 @@ const continueBuy = () => {
                             </div>
                         </div>
 
-                        <div class="flex justify-end mx-5 mt-2">
+                        <div class="flex justify-end mx-5 mt-3">
                             <p>Total: R${{ cartStore.cartTotal + '0' }}</p>
                         </div>
                     </div>
