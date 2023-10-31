@@ -84,7 +84,11 @@ const addToCart = (product) => {
                                     </div>
 
                                     <div class="mx-4 mt-3 lg:mx-10">
-                                        <div>
+                                        <div class="text-center">
+                                            <p class="text-red-700 text-lg lg:text-xl">{{ product.name }}</p>
+                                        </div>
+
+                                        <div class="mt-4">
                                             <img class="object-cover w-full rounded-lg" :src="product.image"
                                                 :alt="product.name" />
                                         </div>
@@ -123,7 +127,7 @@ const addToCart = (product) => {
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                     <div class="pl-4 text-sm font-bold text-red-700">
-                        <p>Add ao Carrinho</p>
+                        <p>Adicionado</p>
                     </div>
                 </div>
             </div>

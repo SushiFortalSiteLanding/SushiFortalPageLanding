@@ -47,6 +47,13 @@
             </div>
         </div>
 
+        <div class="text-center text-white mt-4 text-base lg:text-lg">
+            <p class="font-bold">Funcionamento</p>
+            <p>Segunda a Domingo</p>
+            <p>11:00h às 15:00h</p>
+            <p>18:00h às 00:00h</p>
+        </div>
+
     </section>
 </template>
 
@@ -55,7 +62,7 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    background-image: linear-gradient(#000000bb, #000000bb), url('https://content.news.ifood.com.br/uploads/2023/07/iFN_pratos-veggie-copiar-1.webp');
+    background-image: linear-gradient(#000000bb, #000000bb), url('../assets/images/bg-image.webp');
     background-repeat: no-repeat;
 }
 
