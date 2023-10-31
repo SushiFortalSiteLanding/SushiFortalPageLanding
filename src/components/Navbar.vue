@@ -133,7 +133,7 @@ const continueBuy = () => {
                     </div>
 
                     <div v-if="cartStore.cartItems.length > 0">
-                        <div class="mt-4 lg:mx-2">
+                        <div class="mt-4 lg:mx-2 max-h-48 lg:max-h-64 overflow-y-auto">
                             <div v-for="(product, index) in cartStore.cartItems" :key="product.id"
                                 class="px-4 py-3 mb-3 border-b">
                                 <div>
