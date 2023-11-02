@@ -22,7 +22,7 @@ const addToCart = (product) => {
     <section class="pb-28">
 
         <div class="py-8 lg:py-14">
-            <p class="text-2xl font-bold text-center text-black lg:text-4xl">Mais Pedido</p>
+            <p class="text-2xl font-bold text-center text-black lg:text-4xl">Destaques</p>
         </div>
 
         <div v-for="product in menuStore.menuDestaques" :key="product.id" class="mb-10">
