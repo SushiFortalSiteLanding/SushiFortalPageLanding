@@ -9,9 +9,9 @@ import MenuList from '../components/MenuList.vue';
   <MainLayout>
     <HomeSection />
 
-    <MostRequested />
-
     <MenuList />
+    
+    <MostRequested />
   </MainLayout>
 </template>
 
