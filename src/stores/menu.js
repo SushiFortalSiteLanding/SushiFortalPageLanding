@@ -1003,7 +1003,7 @@ export const useMenuStore = defineStore('menu', () => {
             id: 115,
             name: 'Temaki Par',
             description: 'Cone tradicionalmente feito de folhas de algas com recheio de arroz e peixe',
-            price: '68.31',
+            price: '68.30',
             type: 'Destaques',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310102014_C4U8_i.jpg',
         }, 
