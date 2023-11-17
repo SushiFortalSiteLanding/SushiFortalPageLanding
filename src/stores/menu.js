@@ -4,7 +4,7 @@ export const useMenuStore = defineStore('menu', () => {
 
     const menuEntradas = [
         {
-            id: 1,
+            id: 1, //
             name: 'Guioza (4 Unidades)',
             description: 'Pastel recheado com Legumes e carne bovina',
             price: '17.90',
