@@ -60,7 +60,7 @@ export const useMenuStore = defineStore('menu', () => {
             description: '6 Hot rolls,3 Uramaki Kani couve, 3 Uramaki kani, 3 Niguiri Skin, 3 Jhou Salmão frito.',
             price: '29.90',
             type: 'Combos a parti de 1real a peça',
-            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091631_7UMB_i.jpg',
+            image: '',
         },
         {
             id: 8,
@@ -68,7 +68,7 @@ export const useMenuStore = defineStore('menu', () => {
             description: '3 Niguiri Salmão, 3 Hossomaki Salmão, 2 Uramaki Salmão, 4 uramaki Camarão, 4 Uramaki skin, 4 Hossomaki Kani, 4 Uramaki kani, 6 Hot Roll',
             price: '37.90',
             type: 'Combos a parti de 1real a peça',
-            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091631_7UMB_i.jpg',
+            image: '',
         },
         {
             id: 9,
@@ -76,7 +76,7 @@ export const useMenuStore = defineStore('menu', () => {
             description: '3 Hossomaki Salmão, 2 Uramaki Salmão, 6 Uramaki Atum , 6 Uramaki Skin, 6 Hossomaki Kani, 4 Uramaki Kani, 3 Hossomaki de Atum 5 Hot Kani, 5 Hot Salmão.',
             price: '40.00',
             type: 'Combos a parti de 1real a peça',
-            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091631_7UMB_i.jpg',
+            image: '',
         },
         {
             id: 10,
@@ -84,7 +84,7 @@ export const useMenuStore = defineStore('menu', () => {
             description: '3 Niguiri Salmão, 5 Hossomaki de atum, 2 Uramaki Salmão, 8 Uramaki de atum,10 Uramaki Kani,10 Hossomaki Kani, 5 Hot Salmão, 5 Hot Kani.',
             price: '57.90',
             type: 'Combos a parti de 1real a peça',
-            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091631_7UMB_i.jpg',
+            image: '',
         },
         {
             id: 11,
@@ -92,7 +92,7 @@ export const useMenuStore = defineStore('menu', () => {
             description: '10 Hot Salmão , 10 Hot Couve Crispy , 10 Uramaki skin com Batata Crispy ,10 Uramaki Kani ,10 Hot Atum com cebolinha.',
             price: '52.90',
             type: 'Combos a parti de 1real a peça',
-            image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091631_7UMB_i.jpg',
+            image: '',
         },
         {
             id: 12,
