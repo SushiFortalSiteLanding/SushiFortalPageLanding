@@ -78,7 +78,7 @@ watchEffect(() => {
 </script>
 
 <template>
-    <div class="relative w-4/5 lg:mx-auto lg:w-4/5">
+    <div class="relative w-[90%] lg:mx-auto lg:w-4/5">
         <div class="w-full pt-8 pb-10 bg-white rounded-md lg:pr-8 lg:pl-9">
             <div class="flex justify-end">
                 <button class="mr-5 lg:mr-5" @click="closeModal">
