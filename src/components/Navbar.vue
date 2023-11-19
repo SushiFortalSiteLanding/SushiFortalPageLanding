@@ -90,12 +90,12 @@ const continueBuy = () => {
                 <ul
                     class="flex flex-col p-4 mt-4 font-medium text-white bg-black border border-gray-100 rounded-lg md:p-0 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-black">
                     <li>
-                        <a href="#Destaques"
-                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Destaques</a>
-                    </li>
-                    <li>
                         <a href="#Cardapio"
                             class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Cardápio</a>
+                    </li>
+                    <li>
+                        <a href="#Destaques"
+                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">Destaques</a>
                     </li>
                     <!--
                     <li>
@@ -133,14 +133,14 @@ const continueBuy = () => {
                     </div>
 
                     <div v-if="cartStore.cartItems.length > 0">
-                        <div class="mt-4 lg:mx-2 max-h-48 lg:max-h-64 overflow-y-auto">
+                        <div class="mt-4 lg:mx-2 max-h-48 lg:max-h-64 overflow-y-auto overflow-x-hidden">
                             <div v-for="(product, index) in cartStore.cartItems" :key="product.id"
                                 class="px-4 py-3 mb-3 border-b">
-                                <div>
+                                <div class="w-72 lg:w-full mr-2">
                                     <p>{{ product.name }}</p>
                                 </div>
 
-                                <div class="flex justify-end mt-1 gap-2">
+                                <div class="flex justify-end mt-2 lg:mt-1 gap-2">
                                     <p>R${{ product.price }}</p>
                                     <button class="text-red-700" @click="cartStore.removeFromCart(product)">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -154,7 +154,7 @@ const continueBuy = () => {
                         </div>
 
                         <div class="flex justify-end mx-5 mt-3">
-                            <p>Total: R${{ cartStore.cartTotal + '0' }}</p>
+                            <p>Total: R${{ parseFloat(cartStore.cartTotal).toFixed(2) }}</p>
                         </div>
                     </div>
 
