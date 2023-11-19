@@ -136,7 +136,7 @@ const continueBuy = () => {
                         <div class="mt-4 lg:mx-2 max-h-48 lg:max-h-64 overflow-y-auto overflow-x-hidden">
                             <div v-for="(product, index) in cartStore.cartItems" :key="product.id"
                                 class="px-4 py-3 mb-3 border-b">
-                                <div class="w-72 lg:w-full mr-2">
+                                <div class="w-full">
                                     <p>{{ product.name }}</p>
                                 </div>
 
