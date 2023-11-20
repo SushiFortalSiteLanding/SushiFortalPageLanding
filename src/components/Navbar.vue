@@ -53,7 +53,7 @@ const continueBuy = () => {
 </script>
 
 <template>
-    <nav class="fixed top-0 left-0 z-20 w-full text-white bg-black border-b border-gray-600">
+    <nav class="fixed top-0 left-0 z-50 w-full text-white bg-black border-b border-gray-600">
         <div class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto">
             <a href="https://sushifortal.com.br/" class="flex items-center">
                 <img src="../assets/images/logo.jpeg" class="h-10 mr-3 rounded-full" alt="Flowbite Logo">

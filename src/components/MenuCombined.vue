@@ -25,6 +25,7 @@ const setOptions = (product) => {
 </script>
 
 <template>
+    <a class="mt-80" :id="array[0].location"></a>
     <section class="pb-14 lg:pb-24">
         <div class="my-4 ml-6 text-left">
             <h2 class="text-xl font-bold text-black lg:text-3xl">
