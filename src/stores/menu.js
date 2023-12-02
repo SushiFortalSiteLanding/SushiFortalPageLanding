@@ -10,6 +10,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '17.90',
             type: 'Entradas',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310092235_M3AX_i.jpg',
+            location: 'Entradas'
         },
         {
             id: 2,
@@ -53,6 +54,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '32.90',
             type: 'Combos a parti de 1real a peça',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091631_7UMB_i.jpg',
+            location: 'Combos'
         },
         {
             id: 7,
@@ -112,6 +114,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '65.90',
             type: 'Combo Plus',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091718_V0PM_i.jpg',
+            location: 'ComboPlus'
         },
         {
             id: 14,
@@ -203,6 +206,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '68.31',
             type: 'Combo Temaki',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310102014_C4U8_i.jpg',
+            location: 'ComboTemaki'
         },
         {
             id: 25,
@@ -224,7 +228,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuPromo = [
-
         {
             id: 27,
             name: 'Hot promo (40) Peças',
@@ -232,6 +235,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '46.90',
             type: 'Promo',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080703_Y141_i.jpg',
+            location: 'Promo'
         },
         {
             id: 28,
@@ -284,8 +288,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuCombinadoFortal = [
-
-
         {
             id: 34,
             name: '20 Peças Fortal',
@@ -293,6 +295,8 @@ export const useMenuStore = defineStore('menu', () => {
             price: '27.90',
             type: 'Combinado Fortal',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080130_664V_i.jpg',
+            quantity: 20,
+            location: 'CombinadoFortal'
         },
         {
             id: 35,
@@ -301,6 +305,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '37.90',
             type: 'Combinado Fortal',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080130_664V_i.jpg',
+            quantity: 30
         },
         {
             id: 36,
@@ -309,6 +314,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '47.90',
             type: 'Combinado Fortal',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080130_664V_i.jpg',
+            quantity: 40
         },
         {
             id: 37,
@@ -317,6 +323,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '67.90',
             type: 'Combinado Fortal',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080130_664V_i.jpg',
+            quantity: 60
         },
         {
             id: 38,
@@ -325,6 +332,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '87.90',
             type: 'Combinado Fortal',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080130_664V_i.jpg',
+            quantity: 80
         },
         {
             id: 39,
@@ -333,6 +341,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '107.00',
             type: 'Combinado Fortal',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080130_664V_i.jpg',
+            quantity: 100
         },
     ]
 
@@ -344,6 +353,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '24.00',
             type: 'Hot Roll',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080725_D448_i.jpg',
+            location: 'HotRoll'
         },
         {
             id: 41,
@@ -379,7 +389,6 @@ export const useMenuStore = defineStore('menu', () => {
         },
     ]
 
-
     const menuJhou = [
         {
             id: 45,
@@ -388,6 +397,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '19.90',
             type: 'Jhou (5 Unidades)',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310101425_FO7E_i.jpg',
+            location: 'Jhou'
         },
         {
             id: 46,
@@ -448,8 +458,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuNiguiri = [
-
-
         {
             id: 53,
             name: 'Niguiri Salmão',
@@ -457,6 +465,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '16.90',
             type: 'Niguiri (4 Unidades)',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080338_5Y6R_i.jpg',
+            location: 'Niguiri'
         },
         {
             id: 54,
@@ -494,7 +503,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuSashimi = [
-
         {
             id: 58,
             name: 'Sashimi Salmão',
@@ -502,6 +510,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '21.90',
             type: 'Sashimi (5 Unidades)',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080409_0A65_i.jpg',
+            location: 'Sashimi'
         },
         {
             id: 59,
@@ -522,8 +531,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuUramaki = [
-
-
         {
             id: 61,
             name: 'Salmão',
@@ -531,6 +538,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '16.90',
             type: 'Uramaki (4 Unidades)',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080425_8346_i.jpg',
+            location: 'Urumaki'
         },
         {
             id: 62,
@@ -575,8 +583,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuHossomaki = [
-
-
         {
             id: 67,
             name: 'Hossomaki',
@@ -584,6 +590,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '8.00',
             type: 'Hossomaki (4 Unidades)',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310101527_OJ06_i.jpg',
+            location: 'Hossomaki'
         },
         {
             id: 68,
@@ -597,7 +604,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuYakisoba = [
-
         {
             id: 69,
             name: 'Yakisoba Frango 500g',
@@ -605,6 +611,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '31.90',
             type: 'Yakisoba',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080225_TND6_i.jpg',
+            location: 'Yakisoba'
         },
         {
             id: 70,
@@ -642,7 +649,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuTemakis = [
-
         {
             id: 74,
             name: 'Camarão',
@@ -650,6 +656,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '32.00',
             type: 'Temakis',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080120_AAQ4_i.jpg',
+            location: 'Temakis'
         },
         {
             id: 75,
@@ -702,7 +709,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuDogRoll = [
-
         {
             id: 81,
             name: 'Cru De Salmão',
@@ -710,6 +716,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '39.90',
             type: 'Dog Roll',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080527_7716_i.jpg',
+            location: 'DogRoll'
         },
         {
             id: 82,
@@ -746,6 +753,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '39.90',
             type: 'Poke',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310080639_Q673_i.jpg',
+            location: 'Poke'
         },
         {
             id: 86,
@@ -766,6 +774,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '55.90',
             type: 'Pratos Quentes',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310081424_ME8O_i.jpg',
+            location: 'PratosQuentes'
         },
         {
             id: 88,
@@ -834,7 +843,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuYakimeshi = [
-
         {
             id: 96,
             name: 'Yakimeshi',
@@ -842,6 +850,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '35.90',
             type: 'Yakimeshi 700g',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310081541_44UP_i.jpg',
+            location: 'Yakimeshi'
         },
         {
             id: 97,
@@ -854,7 +863,6 @@ export const useMenuStore = defineStore('menu', () => {
     ]
 
     const menuComplementos = [
-
         {
             id: 98,
             name: 'Tarê',
@@ -862,6 +870,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '1.00',
             type: 'Complementos',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310111629_V108_i.jpg',
+            location: 'Complementos'
         },
         {
             id: 99,
@@ -930,6 +939,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '5.90',
             type: 'Bebidas',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310111637_20DF_i.jpg',
+            location: 'Bebidas'
         },
         {
             id: 107,
@@ -998,7 +1008,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '110.90',
             type: 'Destaques',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310091647_HR4M_i.jpg',
-        }, 
+        },
         {
             id: 115,
             name: 'Temaki Par',
@@ -1006,7 +1016,7 @@ export const useMenuStore = defineStore('menu', () => {
             price: '68.30',
             type: 'Destaques',
             image: 'https://static.ifood-static.com.br/image/upload/t_medium/pratos/0b7470e3-6031-40bb-99ca-94e009621556/202310102014_C4U8_i.jpg',
-        }, 
+        },
         {
             id: 116,
             name: 'Combo Plus Salmão (20 peças)',
@@ -1017,16 +1027,65 @@ export const useMenuStore = defineStore('menu', () => {
         },
     ]
 
+    const combinedOptions = [
+        { id: 1, name: 'Hossomaki Kani', price: "0.00" },
+        { id: 2, name: 'Hossomaki de Atum', price: "0.00" },
+        { id: 3, name: 'Uramaki Skin', price: "0.00" },
+        { id: 4, name: 'Niguiri Kani Empanado', price: "0.00" },
+        { id: 5, name: 'Uramaki Salmão', price: "15.90" },
+        { id: 6, name: 'Hot Roll Salmão', price: "0.00" },
+        { id: 7, name: 'Hot Roll Atum', price: "0.00" },
+        { id: 8, name: 'Hot Roll Kani', price: "0.00" },
+        { id: 9, name: 'Niquiri Salmão', price: "12.00" },
+    ]
+
+    const menuTypes = [
+        { name: 'Entradas', location: '#Entradas' },
+        { name: 'Combos', location: '#Combos' },
+        { name: 'Combos Plus', location: '#ComboPlus' },
+        { name: 'Combo Temaki', location: '#ComboTemaki' },
+        { name: 'Promo', location: '#Promo' },
+        { name: 'Combinado Fortal', location: '#CombinadoFortal' },
+        { name: 'HotRoll', location: '#HotRoll' },
+        { name: 'Jhou', location: '#Jhou' },
+        { name: 'Niguiri', location: '#Niguiri' },
+        { name: 'Sashimi', location: '#Sashimi' },
+        { name: 'Uramaki', location: '#Urumaki' },
+        { name: 'Hossomaki', location: '#Hossomaki' },
+        { name: 'Yakisoba', location: '#Yakisoba' },
+        { name: 'Temakis', location: '#Temakis' },
+        { name: 'Dog Roll', location: '#DogRoll' },
+        { name: 'Poke', location: '#Poke' },
+        { name: 'Pratos Quentes', location: '#PratosQuentes' },
+        { name: 'Yakimeshi', location: '#Yakimeshi' },
+        { name: 'Complementos', location: '#Complementos' },
+        { name: 'Bebidas', location: '#Bebidas' },
+    ]
+
     return {
         menuEntradas,
         menuCombos,
         menuCombosPlus,
         menuComboTemaki,
         menuPromo,
-        menuCombinadoFortal, menuHotRoll, menuJhou, menuNiguiri, menuSashimi,
-        menuUramaki, menuHossomaki, menuYakisoba, menuTemakis, menuDogRoll, menuPoke,
-        menuPratosQuentes, menuYakimeshi, menuComplementos, menuBebidas, 
+        menuCombinadoFortal,
+        menuHotRoll,
+        menuJhou,
+        menuNiguiri,
+        menuSashimi,
+        menuUramaki,
+        menuHossomaki,
+        menuYakisoba,
+        menuTemakis,
+        menuDogRoll,
+        menuPoke,
+        menuPratosQuentes,
+        menuYakimeshi,
+        menuComplementos,
+        menuBebidas,
+        menuDestaques,
+        combinedOptions,
 
-        menuDestaques
+        menuTypes
     }
 })

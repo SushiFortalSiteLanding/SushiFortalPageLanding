@@ -1,31 +1,31 @@
 <script setup>
+import ModalCombined from './ModalCombined.vue';
 import { ref } from 'vue';
-import { useCartStore } from '../stores/cart.js';
 
 const props = defineProps(['title', 'array'])
-
-const cartStore = useCartStore()
 
 const addProduct = ref(false)
 
 const products = props.array.map(product => ({
     ...product,
-    showDescription: ref(false)
+    showDescriptionCombined: ref(false),
+    modalSet: ref(false)
 }))
 
 const addToCart = (product) => {
-    product.showDescription = false;
-
+    product.modalSet = false
     addProduct.value = true
     setTimeout(() => addProduct.value = false, 2500)
-
-    cartStore.addToCart(product)
 }
 
+const setOptions = (product) => {
+    product.showDescriptionCombined = false
+    product.modalSet = true
+}
 </script>
 
 <template>
-    <a class="py-8" :id="array[0].location"></a>
+    <a class="mt-80" :id="array[0].location"></a>
     <section class="pb-14 lg:pb-24">
         <div class="my-4 ml-6 text-left">
             <h2 class="text-xl font-bold text-black lg:text-3xl">
@@ -37,7 +37,7 @@ const addToCart = (product) => {
 
                 <div v-for="product in array" :key="product.id"
                     class="relative flex flex-col w-full overflow-hidden bg-white border border-gray-100 rounded-lg shadow-md">
-                    <div @click="product.showDescription = true"
+                    <div @click="product.showDescriptionCombined = true"
                         class="relative flex h-48 mx-3 mt-3 overflow-hidden lg:h-60 rounded-xl" href="#">
                         <img class="object-cover w-full" :src="product.image" :alt="product.name" />
                         <span :title="product.description"
@@ -57,25 +57,32 @@ const addToCart = (product) => {
                             <p class="text-lg font-bold lg:text-3xl">R${{ product.price }}</p>
                         </div>
 
-                        <button @click="addToCart(product)"
+                        <button @click="product.modalSet = true"
                             class="flex items-center justify-center w-full rounded-md bg-red-700 px-5 py-2.5 text-center text-sm lg:font-medium text-white hover:bg-red-900 focus:outline-none focus:ring-4 focus:ring-red-300">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-2" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>
-                            Adicionar ao carrinho</button>
+                            Montar</button>
                     </div>
 
                     <Transition>
                         <div class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
-                            v-show="product.showDescription">
+                            v-show="product.modalSet">
+                            <ModalCombined :product="product" :quantity="product.quantity"
+                                @close-modal="product.modalSet = false" @add-product="addToCart(product)" />
+                        </div>
+                    </Transition>
+                    <div v-show="product.modalSet" class="fixed inset-0 z-40 bg-black opacity-75"></div>
+
+                    <Transition>
+                        <div class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto"
+                            v-show="product.showDescriptionCombined">
                             <div class="relative w-4/5 lg:mx-auto lg:w-2/5">
                                 <div class="w-full pt-8 pb-10 bg-white rounded-md lg:pr-8 lg:pl-9">
-                                    <div class="flex justify-between">
-                                        <p class="text-2xl font-bold tracking-tight"></p>
-
-                                        <button class="mr-5 lg:mr-5" @click="product.showDescription = false">
+                                    <div class="flex justify-end">
+                                        <button class="mr-5 lg:mr-5" @click="product.showDescriptionCombined = false">
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                                 stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -100,11 +107,11 @@ const addToCart = (product) => {
                                     </div>
 
                                     <div class="flex flex-row-reverse mt-10 mr-5">
-                                        <button type="submit" @click="addToCart(product)"
+                                        <button type="submit" @click="setOptions(product)"
                                             class="py-2 ml-5 text-base tracking-tighter text-white bg-red-700 rounded-full px-7">
-                                            Adicionar
+                                            Montar
                                         </button>
-                                        <button @click="product.showDescription = false"
+                                        <button @click="product.showDescriptionCombined = false"
                                             class="py-2 text-base tracking-tighter text-red-700 bg-white border border-red-700 rounded-full px-7">
                                             Fechar
                                         </button>
@@ -113,11 +120,10 @@ const addToCart = (product) => {
                             </div>
                         </div>
                     </Transition>
-                    <div v-show="product.showDescription" class="fixed inset-0 z-40 bg-black opacity-75"></div>
+                    <div v-show="product.showDescriptionCombined" class="fixed inset-0 z-40 bg-black opacity-75"></div>
                 </div>
             </div>
         </div>
-
 
         <Transition>
             <div v-show="addProduct" class="fixed bottom-4 right-4 z-50">
@@ -135,6 +141,40 @@ const addToCart = (product) => {
         </Transition>
     </section>
 </template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <style scoped>
 .v-enter-active,

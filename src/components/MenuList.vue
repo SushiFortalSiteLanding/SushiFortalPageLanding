@@ -1,5 +1,6 @@
 <script setup>
 import GridProduct from './GridProduct.vue';
+import MenuCombined from './MenuCombined.vue';
 import { useMenuStore } from '../stores/menu.js'
 
 const menuStore = useMenuStore()
@@ -24,7 +25,7 @@ const menuStore = useMenuStore()
 
         <GridProduct title="Promo" :array="menuStore.menuPromo"/>
 
-        <GridProduct title="Combinado Fortal" :array="menuStore.menuCombinadoFortal"/>
+        <MenuCombined title="Combinado Fortal" :array="menuStore.menuCombinadoFortal"/>
 
         <GridProduct title="Hot Roll" :array="menuStore.menuHotRoll"/>
 
