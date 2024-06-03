@@ -26,7 +26,7 @@ import Navbar from '../components/Navbar.vue';
                         class="hover:underline">Sushi Fortal™</a>. All Rights Reserved.
                 </span>
                 <div class="flex mt-4 space-x-3 sm:justify-center sm:mt-0">
-                    <a href="https://api.whatsapp.com/send?phone=558586994329" target="_blank"
+                    <a href="https://api.whatsapp.com/send?phone=558592501173" target="_blank"
                         class="transition ease-in-out fill-white hover:scale-125 delay-50 hover:-translate-y-1">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
                             viewBox="0,0,256,256">
