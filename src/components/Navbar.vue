@@ -27,7 +27,7 @@ const backToCart = () => {
 }
 
 const continueBuy = () => {
-    const number = "5585986994329";
+    const number = "5585992501173";
     const cartItems = cartStore.cartItems;
     const addressText = "Endereço: " + address.value;
     const paymentText = "Pagamento: " + payment.value;
